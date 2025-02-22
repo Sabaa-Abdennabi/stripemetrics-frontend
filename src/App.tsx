@@ -21,11 +21,10 @@ const App: React.FC = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={
-            <ProtectedComponent>
               <DashboardProvider>
                 <Dashboard />
               </DashboardProvider>
-            </ProtectedComponent>}
+            }
           />
           <Route path="/stripe-old-data" element={
             <ProtectedComponent>

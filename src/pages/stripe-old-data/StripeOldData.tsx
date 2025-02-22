@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import React, { useEffect, useRef, useState } from 'react';
-import { setAuthToken } from '../../utils/setAuthToken';
 import { createStripeOldData, getStripeOldData } from '../../services/stripeOldDataApiService';
 import moment from 'moment';
 import { StripeOldDataRow } from '../../interfaces/interface';
@@ -71,7 +70,6 @@ export const StripeOldData: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setAuthToken(token);
 
       try {
         const response = await getStripeOldData();

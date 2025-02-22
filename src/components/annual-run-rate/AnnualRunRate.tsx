@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getMrrData } from "../../services/dashboardApiService";
-import { setAuthToken } from "../../utils/setAuthToken";
 import { useAuth } from "../../context/AuthContext";
 import { useDashboard } from "../../context/DashboardContext";
 import moment from "moment";
@@ -14,7 +13,6 @@ export const AnnualRunRate = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setAuthToken(token);
 
       try {
         const response = await getMrrData(dateRange);

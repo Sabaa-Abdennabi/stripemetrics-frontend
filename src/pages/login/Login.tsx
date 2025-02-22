@@ -2,25 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
-import { useAuth } from '../../context/AuthContext';
-import { login } from '../../services/authService';
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
-  const { appLogin } = useAuth();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleLogin = async () => {
-    const response = await login(email, password);
+    //const response = await login(email, password);
     
-    if(response.ok) {
+  
       toast.success('Welcome back!');
-      appLogin(response.user, response.token);
-      setTimeout(()=>{navigate("/dashboard")}, 1000);
-    } else {
-      toast.error('Invalid password!');
-    }
+      //appLogin(response.user, response.token);
+      setTimeout(()=>{navigate("/dashboard")});
+  
   }
 
   return(
